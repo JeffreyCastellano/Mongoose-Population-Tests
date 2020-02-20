@@ -1,5 +1,5 @@
 {
-  "name": "photon",
+  "name": "population test",
   "version": "0.0.1",
   "description": "",
   "main": "server/server.js",
@@ -9,7 +9,7 @@
     "start": "node server/server.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "",
   "dependencies": {
     "accesscontrol": "^2.2.1",
     "bcrypt": "^3.0.6",
