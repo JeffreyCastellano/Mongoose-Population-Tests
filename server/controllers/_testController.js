@@ -7,52 +7,6 @@ const War = require('../models/_warModel');
 //---------------------------------------------------------------------------------
 
 
-exports.runTest = async (req, res, next) => {
-  try {
-
-    let author = new Person({
-      _id: new mongoose.Types.ObjectId(),
-      name: 'Ian Fleming',
-      age: 50
-    });
-
-    author.save(function (err) {
-      if (err) return handleError(err);
-      const story1 = new Story({
-        title: 'Casino Royale',
-        author: author._id
-      });
-    
-      story1.save(function (err) {
-        if (err) return handleError(err);
-        res.json({
-          message: "success"
-        });
-      });
-    });
-  
-  } catch (error) {
-    next(error)
-  }
-}
-
-exports.getTest = async (req, res, next) => {
-  try {
-    Story.findOne({ title: 'Casino Royale' }).
-    populate('author').
-    exec(function (err, story) {
-      if (err) return handleError(err);
-      res.json({
-        message:story.author
-      });
-      console.log(story.author);
-    });
-  } catch (error) {
-    next(error)
-  }
-}
-
-
 exports.creatGoblin = async (req, res, next) => {
   try {
     const gname = req.params.gname;
