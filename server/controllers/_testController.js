@@ -120,9 +120,12 @@ exports.listGoblins = async (req, res, next) => {
 }
 
 exports.listWars = async (req, res, next) => {
-  const wars = await War.find({}).populate({path: 'goblins'});
+  //const wars = await War.find({}).populate({path: 'goblins'});
+  //const wars = await War.find({}).populate({path: 'goblins',match: doc => ({ age:50})}); // matching or filters applied to population
+  //const wars = await War.find({},'name').populate({path: 'goblins'}); // matching or filters
+  //const wars = await War.find({},'name').populate({path: 'goblins', match:{'name': 'jeff'}}); // matching or filters population results
+  const wars = await War.find({},'name').populate({path: 'goblins', match:{'name': 'jeff'}, select:'name'}); // matching or filters population results and select filters result
   res.status(200).json({
     data: wars
   });
-}
 
