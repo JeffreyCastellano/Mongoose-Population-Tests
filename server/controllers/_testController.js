@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-const Person = require('../models/_personModel');
-const Story = require('../models/_storyModel');
-
 const Goblin = require('../models/_goblinModel');
 const War = require('../models/_warModel');
 
