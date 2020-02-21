@@ -5,7 +5,6 @@ const upload = multer({ dest: 'uploads/' });
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const path = require('path');
-const User = require('./models/userModel');
 const routes = require('./routes/route.js');
 require("dotenv").config({
   path: path.join(__dirname, "../.env")
@@ -18,7 +17,7 @@ app.use(express.urlencoded({limit: '150mb'}));
 
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect('mongodb://localhost:27017/photon', { useNewUrlParser: true }).then(() => {
+mongoose.connect('mongodb://localhost:27017/goblintest', { useNewUrlParser: true }).then(() => {
   console.log('Connected to the Database successfully')
 });
 
